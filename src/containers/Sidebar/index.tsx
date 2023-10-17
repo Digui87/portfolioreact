@@ -1,9 +1,26 @@
+import Avatar from '../../components/Avatar'
+import Paragrafo from '../../components/Paragrafo'
 import Titulo from '../../components/Titulo'
 
-const Sidebar = () => (
+import { Descricao, BotaoTema, SidebarContainer } from './styles'
+
+type Props = {
+  trocaTema: () => void
+}
+
+const Sidebar = (props: Props) => (
   <aside>
-    <img src="https://github.com/Digui87.png" />
-    <Titulo fontSize={20}>Diagnas Salvador</Titulo>
+    <SidebarContainer>
+      <Avatar />
+      <Titulo fontSize={20}>Diagnas Salvador</Titulo>
+      <Paragrafo tipo="secundario" fontSize={16}>
+        Digui87
+      </Paragrafo>
+      <Descricao tipo="principal" fontSize={12}>
+        Estudante Full Stack Python
+      </Descricao>
+      <BotaoTema onClick={props.trocaTema}>Trocar tema</BotaoTema>
+    </SidebarContainer>
   </aside>
 )
 
